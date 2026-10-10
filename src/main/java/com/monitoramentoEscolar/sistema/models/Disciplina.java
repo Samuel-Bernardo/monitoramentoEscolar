@@ -1,6 +1,7 @@
 package com.monitoramentoEscolar.sistema.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,12 +16,21 @@ import java.util.List;
 @Entity
 @Table(name = "disciplinas")
 @EqualsAndHashCode(exclude = {"atribuicoes", "notas", "desempenhos"})
-public class Disciplinas {
+public class Disciplina {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "O nome da disciplina é obrigatório")
+    @Column(nullable = false)
     private String nome;
+
+    @NotBlank(message = "O código da disciplina é obrigatório")
+    @Column(nullable = false, unique = true)
+    private String codigo;
+
+    @Column(nullable = true, length = 500)
     private String descricao;
 
     @OneToMany(mappedBy = "disciplina")

@@ -20,4 +20,16 @@ public class AlunoMapper {
         aluno.setStatus(request.status());
         return aluno;
     }
+
+    // ===== Request → Entity existente (editar) =====
+    public void updateEntity(AlunoRequest request, Aluno aluno){
+        aluno.setNome(request.nome());
+        aluno.setCpf(request.cpf());
+        aluno.setDataNascimento(request.dataNascimento());
+        aluno.setEmail(request.email());
+        aluno.setTelefone(request.telefone());
+        aluno.setNomeResponsavel(request.nomeResponsavel());
+        aluno.setTelefoneResponsavel(request.telefoneResponsavel());
+        aluno.setStatus(request.status());
+    }
 }

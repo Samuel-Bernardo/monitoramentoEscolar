@@ -31,3 +31,31 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Arquivos sensíveis (não sobem para o GitHub) ###
+application.properties
+application-local.properties
+application-dev.properties
+application-prod.properties
+application-*.properties
+*.env
+.env
+.env.*
+
+### Logs ###
+*.log
+logs/
+
+### Sistema operacional ###
+.DS_Store
+Thumbs.db
+desktop.ini
+
+### Outros ###
+*.class
+*.jar
+*.war
+*.ear
+*.bak
+*.tmp
+*.swp

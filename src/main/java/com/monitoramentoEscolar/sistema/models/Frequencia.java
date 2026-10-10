@@ -24,12 +24,12 @@ public class Frequencia {
     @NotNull(message = "O ID do aluno é obrigatório")
     @ManyToOne(optional = false)
     @JoinColumn(name = "alunoId", insertable = false, updatable =false)
-    private Aluno alunoId;
+    private Aluno aluno;
 
     @NotNull(message = "O ID da turma é obrigatório")
     @ManyToOne(optional = false)
     @JoinColumn(name = "turmaId", insertable = false, updatable =false)
-    private Turma turmaId;
+    private Turma turma;
 
     @NotBlank(message = "A data da frequência é obrigatória")
     @Column(nullable = false)

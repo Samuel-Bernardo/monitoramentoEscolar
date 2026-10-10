@@ -20,15 +20,15 @@ public class AtribuicaoAula {
     @NotNull(message = "O campo professorId não pode ser nulo")
     @ManyToOne(optional = false)
     @JoinColumn(name = "professorId", insertable = false, updatable = false)
-    private Professor professorId;
+    private Professor professor;
 
     @NotNull(message = "O campo disciplinaId não pode ser nulo")
     @ManyToOne(optional = false)
     @JoinColumn(name = "disciplinaId", insertable = false, updatable = false)
-    private Disciplina disciplinaId;
+    private Disciplina disciplina;
 
     @NotNull(message = "O campo turmaId não pode ser nulo")
     @ManyToOne(optional = false)
     @JoinColumn(name = "turmaId", insertable = false, updatable = false)
-    private Turma turmaId;
+    private Turma turma;
 }

@@ -23,12 +23,12 @@ public class Comportamento {
     @NotNull(message = "O campo alunoId é obrigatório")
     @ManyToOne(optional = false)
     @JoinColumn(name = "aluno_id" , insertable = false, updatable = false)
-    private Aluno alunoId;
+    private Aluno aluno;
 
     @NotNull(message = "O campo turmaId é obrigatório")
     @ManyToOne(optional = false)
     @JoinColumn(name = "turma_id", insertable = false, updatable = false)
-    private Turma turmaId;
+    private Turma turma;
 
     @NotBlank(message = "O campo data é obrigatório")
     @Column(name = "data", nullable = false)

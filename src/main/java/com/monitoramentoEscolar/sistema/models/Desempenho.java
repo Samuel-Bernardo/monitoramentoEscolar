@@ -24,16 +24,16 @@ public class Desempenho {
     @NotNull(message = "O aluno é obrigatório")
     @ManyToOne(optional = false)
     @JoinColumn(name = "alunoId", insertable = false, updatable = false)
-    private Aluno alunoId;
+    private Aluno aluno;
 
     @NotNull(message = "A turma é obrigatória")
     @ManyToOne(optional = false)
     @JoinColumn(name = "turmaId", insertable = false, updatable = false)
-    private Turma turmaId;
+    private Turma turma;
 
     @ManyToOne
     @JoinColumn(name = "disciplinaId", insertable = false, updatable = false)
-    private Disciplina disciplinaId;
+    private Disciplina disciplina;
 
     @NotBlank(message = "O bimestre é obrigatório")
     @Column(name = "bimestre", nullable = false)

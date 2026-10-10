@@ -51,7 +51,6 @@ public class Professor {
     @Column(nullable = false)
     private String status;          // Ex: "Ativo", "Inativo", "Afastado", "Aposentado"
 
-    @NotNull(message = "O salário do professor é obrigatório")
     @OneToMany(mappedBy = "professor")
     private List<AtribuicaoAula> atribuicoes = new ArrayList<>();
 }

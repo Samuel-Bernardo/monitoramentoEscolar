@@ -37,4 +37,12 @@ public class MatriculaMapper {
         return turmaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Turma não encontrada: " + id));
     }
+
+    public void updateEntity(MatriculaRequest request, Matricula matricula) {
+        matricula.setAnoLetivo(request.anoLetivo());
+        matricula.setStatus(request.status());
+        matricula.setDataMatricula(request.dataMatricula());
+        matricula.setAluno(buscarAluno(request.alunoId()));
+        matricula.setTurma(buscarTurma(request.turmaId()));
+    }
 }

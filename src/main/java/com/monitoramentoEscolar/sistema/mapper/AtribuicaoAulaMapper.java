@@ -46,4 +46,10 @@ public class AtribuicaoAulaMapper {
         return turmaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Turma não encontrada: " + id));
     }
+
+    public void updateEntity(AtribuicaoAulaRequest request, AtribuicaoAula atribuicaoAula) {
+        atribuicaoAula.setProfessor(buscarProfessor(request.professorId()));
+        atribuicaoAula.setDisciplina(buscarDisciplina(request.disciplinaId()));
+        atribuicaoAula.setTurma(buscarTurma(request.turmaId()));
+    }
 }

@@ -2,6 +2,7 @@ package com.monitoramentoEscolar.sistema.mapper;
 
 
 import com.monitoramentoEscolar.sistema.dtos.disciplina.DisciplinaRequest;
+import com.monitoramentoEscolar.sistema.dtos.disciplina.DisciplinaResumo;
 import com.monitoramentoEscolar.sistema.models.Disciplina;
 
 public class DisciplinaMapper {
@@ -18,5 +19,13 @@ public class DisciplinaMapper {
         disciplina.setNome(request.nome());
         disciplina.setCodigo(request.codigo());
         disciplina.setDescricao(request.descricao());
+    }
+
+    public DisciplinaResumo toResumo(Disciplina disciplina) {
+        return new DisciplinaResumo(
+                disciplina.getId(),
+                disciplina.getNome(),
+                disciplina.getCodigo()
+        );
     }
 }

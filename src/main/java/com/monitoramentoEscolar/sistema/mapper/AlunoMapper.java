@@ -32,4 +32,5 @@ public class AlunoMapper {
         aluno.setTelefoneResponsavel(request.telefoneResponsavel());
         aluno.setStatus(request.status());
     }
+    
 }

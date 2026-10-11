@@ -4,7 +4,9 @@ package com.monitoramentoEscolar.sistema.mapper;
 import com.monitoramentoEscolar.sistema.dtos.disciplina.DisciplinaRequest;
 import com.monitoramentoEscolar.sistema.dtos.disciplina.DisciplinaResumo;
 import com.monitoramentoEscolar.sistema.models.Disciplina;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DisciplinaMapper {
 
     public Disciplina toEntity(DisciplinaRequest request) {

@@ -8,7 +8,9 @@ import com.monitoramentoEscolar.sistema.models.Turma;
 import com.monitoramentoEscolar.sistema.repository.AlunoRepository;
 import com.monitoramentoEscolar.sistema.repository.TurmaRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MatriculaMapper {
 
     private final AlunoRepository alunoRepository;

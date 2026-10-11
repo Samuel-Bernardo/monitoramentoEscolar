@@ -3,7 +3,9 @@ package com.monitoramentoEscolar.sistema.mapper;
 import com.monitoramentoEscolar.sistema.dtos.turma.TurmaRequest;
 import com.monitoramentoEscolar.sistema.dtos.turma.TurmaResumo;
 import com.monitoramentoEscolar.sistema.models.Turma;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TurmaMapper {
 
     public Turma toEntity(TurmaRequest request) {

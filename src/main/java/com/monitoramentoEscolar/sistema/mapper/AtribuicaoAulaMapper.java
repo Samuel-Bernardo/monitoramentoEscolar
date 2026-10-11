@@ -9,7 +9,9 @@ import com.monitoramentoEscolar.sistema.repository.DisciplinaRepository;
 import com.monitoramentoEscolar.sistema.repository.ProfessorRepository;
 import com.monitoramentoEscolar.sistema.repository.TurmaRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AtribuicaoAulaMapper {
 
     private final ProfessorRepository professorRepository;

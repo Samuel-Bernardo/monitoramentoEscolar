@@ -4,6 +4,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+import java.time.LocalDateTime;
+
 public record MatriculaRequest(
         @NotBlank(message = "Ano letivo é obrigatório")
         @Pattern(regexp = "\\d{4}", message = "Ano letivo deve ter 4 dígitos")
@@ -14,7 +16,7 @@ public record MatriculaRequest(
         String status,
 
         @NotBlank(message = "Data da matrícula é obrigatória")
-        String dataMatricula,
+        LocalDateTime dataMatricula,
 
         @NotNull(message = "Aluno é obrigatório")
         Long alunoId,

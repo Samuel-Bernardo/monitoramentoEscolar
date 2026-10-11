@@ -13,4 +13,10 @@ public class DisciplinaMapper {
         disciplina.setDescricao(request.descricao());
         return disciplina;
     }
+
+    public void updateEntity(DisciplinaRequest request, Disciplina disciplina) {
+        disciplina.setNome(request.nome());
+        disciplina.setCodigo(request.codigo());
+        disciplina.setDescricao(request.descricao());
+    }
 }

@@ -17,4 +17,13 @@ public class ProfessorMapper {
         professor.setStatus(request.status());
         return professor;
     }
+
+    public void updateEntity(ProfessorRequest request, Professor professor) {
+        professor.setNome(request.nome());
+        professor.setCpf(request.cpf());
+        professor.setEmail(request.email());
+        professor.setFormacao(request.formacao());
+        professor.setTelefone(request.telefone());
+        professor.setStatus(request.status());
+    }
 }

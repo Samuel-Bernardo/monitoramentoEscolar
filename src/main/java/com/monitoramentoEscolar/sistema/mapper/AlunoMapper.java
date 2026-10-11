@@ -1,6 +1,8 @@
 package com.monitoramentoEscolar.sistema.mapper;
 
 import com.monitoramentoEscolar.sistema.dtos.aluno.AlunoRequest;
+import com.monitoramentoEscolar.sistema.dtos.aluno.AlunoResponse;
+import com.monitoramentoEscolar.sistema.dtos.aluno.AlunoResumo;
 import com.monitoramentoEscolar.sistema.models.Aluno;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +33,13 @@ public class AlunoMapper {
         aluno.setNomeResponsavel(request.nomeResponsavel());
         aluno.setTelefoneResponsavel(request.telefoneResponsavel());
         aluno.setStatus(request.status());
+    }
+
+    public AlunoResumo toResumo(Aluno aluno){
+        return new AlunoResumo(
+                aluno.getId(),
+                aluno.getNome()
+        );
     }
     
 }

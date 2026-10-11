@@ -1,6 +1,7 @@
 package com.monitoramentoEscolar.sistema.mapper;
 
 import com.monitoramentoEscolar.sistema.dtos.professor.ProfessorRequest;
+import com.monitoramentoEscolar.sistema.dtos.professor.ProfessorResumo;
 import com.monitoramentoEscolar.sistema.models.Professor;
 import org.springframework.stereotype.Component;
 
@@ -25,5 +26,13 @@ public class ProfessorMapper {
         professor.setFormacao(request.formacao());
         professor.setTelefone(request.telefone());
         professor.setStatus(request.status());
+    }
+
+    public ProfessorResumo toResumo(Professor professor) {
+        return new ProfessorResumo(
+                professor.getId(),
+                professor.getNome(),
+                professor.getFormacao()
+        );
     }
 }

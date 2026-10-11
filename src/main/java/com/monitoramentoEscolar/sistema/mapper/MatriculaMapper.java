@@ -1,6 +1,7 @@
 package com.monitoramentoEscolar.sistema.mapper;
 
 import com.monitoramentoEscolar.sistema.dtos.matricula.MatriculaRequest;
+import com.monitoramentoEscolar.sistema.dtos.matricula.MatriculaResumo;
 import com.monitoramentoEscolar.sistema.models.Aluno;
 import com.monitoramentoEscolar.sistema.models.Matricula;
 import com.monitoramentoEscolar.sistema.models.Turma;
@@ -45,4 +46,14 @@ public class MatriculaMapper {
         matricula.setAluno(buscarAluno(request.alunoId()));
         matricula.setTurma(buscarTurma(request.turmaId()));
     }
-}
+
+    public MatriculaResumo toResumo(Matricula matricula) {
+        if (matricula == null) return null;
+        return new MatriculaResumo(
+                matricula.getId(),
+                matricula.getAnoLetivo(),
+                matricula.getStatus());
+    }
+    }
+
+

@@ -39,4 +39,14 @@ public class ComportamentoMapper {
     private Turma BuscarTurma(Long id){
         return turmaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Turma não encontrada" + id));
     }
+
+    public void updateEntity (ComportamentoRequest request, Comportamento c){
+
+    c.setRegistradoPor(request.registradoPor());
+    c.setTipo(request.tipo());
+    c.setDescricao(request.descricao());
+    c.setData(request.data());
+    c.setAluno(BuscarAluno(request.alunoId()));
+    c.setTurma(BuscarTurma(request.turmaId()));
+    }
 }

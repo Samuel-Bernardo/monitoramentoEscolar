@@ -48,4 +48,15 @@ public class DesempenhoMapper {
     public Disciplina BuscarDisciplina(Long id){
         return disciplinaRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Disciplina não encontrada" + id));
     }
+
+    public void updateEntity (DesempenhoRequest request, Desempenho d){
+        d.setSituacao(request.situacao());
+        d.setObservacao(request.observacao());
+        d.setMedia(request.media());
+        d.setBimestre(request.bimestre());
+        d.setAnoLetivo(request.anoLetivo());
+        d.setAluno(BuscarAluno(request.alunoId()));
+        d.setTurma(BuscarTurma(request.turmaId()));
+        d.setDisciplina(BuscarDisciplina(request.disciplinaId()));
+    }
 }

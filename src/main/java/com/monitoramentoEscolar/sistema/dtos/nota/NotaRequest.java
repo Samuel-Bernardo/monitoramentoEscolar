@@ -2,6 +2,8 @@ package com.monitoramentoEscolar.sistema.dtos.nota;
 
 import jakarta.validation.constraints.*;
 
+import java.time.LocalDate;
+
 public record NotaRequest(
 
         @NotNull(message = "Valor é obrigatório")
@@ -17,7 +19,7 @@ public record NotaRequest(
         String bimestre,
 
         @NotBlank(message = "Data é obrigatória")
-        String data,
+        LocalDate data,
 
         String observacao,
 

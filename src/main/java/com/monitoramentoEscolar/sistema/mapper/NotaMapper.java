@@ -53,4 +53,15 @@ public class NotaMapper {
         return turmaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Turma não encontrada: " + id));
     }
+
+    public void updateEntity (NotaRequest request, Nota nota){
+        nota.setValor(request.valor());
+        nota.setTipo(request.tipo());
+        nota.setBimestre(request.bimestre());
+        nota.setData(request.data());
+        nota.setObservacao(request.observacao());
+        nota.setAluno(buscarAluno(request.alunoId()));
+        nota.setDisciplina(buscarDisciplina(request.disciplinaId()));
+        nota.setTurma(buscarTurma(request.turmaId()));
+    }
 }

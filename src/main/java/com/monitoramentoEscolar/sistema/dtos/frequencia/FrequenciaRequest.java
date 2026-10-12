@@ -4,10 +4,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
+import java.time.LocalDate;
+
 public record FrequenciaRequest(
 
         @NotBlank(message = "Data é obrigatória")
-        String data,
+        LocalDate data,
 
         @NotBlank(message = "Status é obrigatório")
         @Pattern(regexp = "PRESENTE|AUSENTE|JUSTIFICADO", message = "Status inválido")

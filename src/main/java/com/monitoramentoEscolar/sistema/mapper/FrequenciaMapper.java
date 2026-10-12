@@ -43,4 +43,13 @@ public class FrequenciaMapper {
         return turmaRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Turma não encontrada: " + id));
     }
+
+    public void updateEntity (FrequenciaRequest request, Frequencia frequencia){
+
+        frequencia.setData(request.data());
+        frequencia.setStatus(request.status());
+        frequencia.setObservacao(request.observacao());
+        frequencia.setAluno(buscarAluno(request.alunoId()));
+        frequencia.setTurma(buscarTurma(request.turmaId()));
+    }
 }

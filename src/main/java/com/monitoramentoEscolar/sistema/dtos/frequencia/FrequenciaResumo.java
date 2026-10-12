@@ -1,9 +1,11 @@
 package com.monitoramentoEscolar.sistema.dtos.frequencia;
 
+import java.time.LocalDate;
+
 public record FrequenciaResumo(
 
         Long id,
-        String data,
+        LocalDate data,
         String status
 ) {
 }
